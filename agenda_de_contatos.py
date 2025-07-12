@@ -70,12 +70,12 @@ def main():
             if escolha == 1:
                 agenda.listar_contatos()
             elif escolha == 2:
-                nome_contato = input("Digite o nome do contato que gostaria: ")
-                numero_contato = input("Digite o número do contato: ")
-                agenda.adicionar_contato(nome_contato,numero_contato)
+                nome_novo_contato = input("Digite o nome do contato que gostaria: ")
+                numero_novo_contato = input("Digite o número do contato: ")
+                agenda.adicionar_contato(nome_novo_contato,numero_novo_contato)
             elif escolha == 3:
-                nome_contato = input("Digite o nome do contato que deseja remover: ")
-                agenda.remover_contato(nome_contato)
+                nome_contato_para_remover = input("Digite o nome do contato que deseja remover: ")
+                agenda.remover_contato(nome_contato_para_remover)
         except ValueError:
             print("Você digitou algo errado!")
 
