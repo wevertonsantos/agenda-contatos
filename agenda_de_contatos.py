@@ -29,8 +29,11 @@ class Agenda:
         self.lista_contatos = {}
 
     def adicionar_contato(self,nome,telefone):
-        contato = Contato(nome,telefone)
-        self.lista_contatos[nome] = contato.telefone
+        if len(nome) > 0 and len(telefone) > 0:
+            contato = Contato(nome,telefone)
+            self.lista_contatos[nome] = contato.telefone
+        else:
+            print("Você digitou dados vazio. Tente novamente!")
     
     def remover_contato(self,nome):
         if nome in self.lista_contatos:
