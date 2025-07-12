@@ -32,12 +32,34 @@ class Agenda:
         contato = Contato(nome,telefone)
         self.lista_contatos[nome] = contato.telefone
     
-    def remover_contato(self,nome,telefone):
+    def remover_contato(self,nome):
         if nome in self.lista_contatos:
-            self.lista_contatos.pop()
+            self.lista_contatos.pop(nome)
+            print(f"Contato '{nome}' removido com sucesso.")
+        else:
+            print(f"Contato '{nome}' não encontrado.")
+    
+    def alterar_contato(self,nome,telefone):
+        if nome in self.lista_contatos:
+            self.lista_contatos.update({nome: telefone})
+            print(f"Contato '{nome}' alterado com sucesso.")
+        else:
+            print(f"Contato '{nome}' não encontrado.")
+
+    def buscar_contato(self,nome):
+        if nome in self.lista_contatos:
+            print(f"Contato: {nome}, telefone: {self.lista_contatos[nome]}")
+        else:
+            print(f"Contato '{nome}' não encontrado.")
+    
+    def listar_contatos(self):
+        for contato in self.lista_contatos:
+            print(f"Contato: {contato}, telefone: {self.lista_contatos[contato]}")
+
 
 agenda = Agenda()
-print(agenda.adicionar_contato("Maria","11988443300"))
-print(agenda.adicionar_contato("Julio","11985243400"))
-print(agenda.remover_contato("Julio","11985243400"))
+agenda.adicionar_contato("Maria","11999")
+agenda.adicionar_contato("Julio","19888")
+agenda.alterar_contato("Julio","11922")
+agenda.listar_contatos()
 print(agenda.lista_contatos)
