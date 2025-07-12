@@ -76,6 +76,10 @@ def main():
             elif escolha == 3:
                 nome_contato_para_remover = input("Digite o nome do contato que deseja remover: ")
                 agenda.remover_contato(nome_contato_para_remover)
+            elif escolha == 4:
+                nome_contato_para_alterar = input("Digite o nome do contato que deseja alterar: ")
+                numero_contato_para_alterar = input("Digite o novo número do contato: ")
+                agenda.alterar_contato(nome_contato_para_alterar,numero_contato_para_alterar)
         except ValueError:
             print("Você digitou algo errado!")
 
