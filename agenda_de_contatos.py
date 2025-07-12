@@ -80,6 +80,12 @@ def main():
                 nome_contato_para_alterar = input("Digite o nome do contato que deseja alterar: ")
                 numero_contato_para_alterar = input("Digite o novo número do contato: ")
                 agenda.alterar_contato(nome_contato_para_alterar,numero_contato_para_alterar)
+            elif escolha == 5:
+                nome_contato_para_buscar = input("Digite o nome do contato para buscar: ")
+                agenda.buscar_contato(nome_contato_para_buscar)
+            elif escolha == 6:
+                print("Você saiu da agenda!")
+                break
         except ValueError:
             print("Você digitou algo errado!")
 
