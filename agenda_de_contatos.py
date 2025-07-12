@@ -53,13 +53,24 @@ class Agenda:
             print(f"Contato '{nome}' não encontrado.")
     
     def listar_contatos(self):
-        for contato in self.lista_contatos:
-            print(f"Contato: {contato}, telefone: {self.lista_contatos[contato]}")
+        if len(self.lista_contatos) > 0:
+            for contato in self.lista_contatos:
+                print(f"Contato: {contato}, telefone: {self.lista_contatos[contato]}")
+        else:
+            print("Lista de contatos vazia")
 
+def main():
+    agenda = Agenda()
+    while True:
+        try:
+            escolha = int(input("1. Listar contatos\n2. Adicionar contato\n3. Remover contato\n4. Alterar contato\n5. Buscar contato\n6. Sair\nEscolha uma opção: "))
+            if escolha == 1:
+                agenda.listar_contatos()
+            elif escolha == 2:
+                nome_contato = input("Digite o nome do contato que gostaria: ")
+                numero_contato = input("Digite o número do contato: ")
+                agenda.adicionar_contato(nome_contato,numero_contato)
+        except ValueError:
+            print("Você digitou algo errado!")
 
-agenda = Agenda()
-agenda.adicionar_contato("Maria","11999")
-agenda.adicionar_contato("Julio","19888")
-agenda.alterar_contato("Julio","11922")
-agenda.listar_contatos()
-print(agenda.lista_contatos)
+main()
